@@ -42,6 +42,7 @@ const PropertySubmissionForm = () => {
   };
 
   return (
+    <div className="min-h-screen bg-white flex justify-center items-center">
     <div className="container mx-auto">
       <h2 className="text-4xl font-bold mb-4">Submit Your Property</h2>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -108,6 +109,7 @@ const PropertySubmissionForm = () => {
         className="bg-violet-700 hover:bg-violet-800 text-white font-bold mt-4 py-5 px-6 rounded focus:outline-none focus:shadow-outline"
         type="submit">Submit Property</button>
       </form>
+    </div>
     </div>
   );
 };

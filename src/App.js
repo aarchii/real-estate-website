@@ -1,7 +1,7 @@
 import React from "react";
 
 //import routes and route
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 //import components
 import Header from "./components/Header";
@@ -15,9 +15,11 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 
 const App = () => {
+  const location = useLocation();
+  const hideHeaderFooter = location.pathname !== '/';
   return (
     <div className="w-full bg-white">
-      <Header />
+      {!hideHeaderFooter && <Header />}
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/login' element={<Login />} />
@@ -26,7 +28,7 @@ const App = () => {
         <Route path="/signup" element={<Signup />} />
         
       </Routes>
-      <Footer />
+      {!hideHeaderFooter && <Footer />}
     </div>
   );
 };
